@@ -1,0 +1,88 @@
+/* =========================================================
+   news.css  —  뉴스 앱 디자인
+   ========================================================= */
+
+.nw-app { position: absolute; inset: 0; background: #fff; color: #202124; font-size: 15px; line-height: 1.4;
+  font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; overflow: hidden; }
+.nw-app button { border: 0; background: none; color: inherit; cursor: pointer; font-family: inherit; }
+.nw-panels { position: absolute; left: 0; right: 0; top: 0; bottom: 84px; }
+.nw-panel { position: absolute; inset: 0; display: none; flex-direction: column; background: #fff; }
+.nw-panel.on { display: flex; }
+.nw-top { flex: none; padding-top: 54px; background: #fff; border-bottom: 1px solid #ececf0; }
+.nw-scroll { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; scrollbar-width: none; }
+.nw-scroll::-webkit-scrollbar { display: none; }
+
+.nw-hd { height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+.nw-logo { font-size: 22px; font-weight: 700; letter-spacing: -.3px; }
+.nw-logo i { font-style: normal; }
+.nw-logo i:nth-child(1) { color: #4285f4; } .nw-logo i:nth-child(2) { color: #ea4335; }
+.nw-logo i:nth-child(3) { color: #fbbc04; } .nw-logo i:nth-child(4) { color: #4285f4; }
+.nw-logo span { color: #5f6368; font-weight: 500; margin-left: 6px; font-size: 20px; }
+.nw-badge { min-width: 22px; height: 22px; padding: 0 7px; border-radius: 11px; background: #d93025; color: #fff; font-size: 12.5px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; box-sizing: border-box; }
+.nw-date { padding: 4px 16px 6px; font-size: 13px; color: #5f6368; }
+.nw-chips { display: flex; gap: 8px; padding: 6px 16px 12px; overflow-x: auto; scrollbar-width: none; }
+.nw-chips::-webkit-scrollbar { display: none; }
+.nw-app .nw-chip { flex: none; height: 34px; padding: 0 15px; border-radius: 17px; border: 1px solid #dadce0 !important; font-size: 14px; color: #3c4043; }
+.nw-app .nw-chip.on { background: #e8f0fe; border-color: #e8f0fe !important; color: #1a73e8; font-weight: 600; }
+
+/* 큰 기사 카드 */
+.nw-big { display: block; width: 100%; text-align: left; padding: 14px 16px 16px; border-bottom: 1px solid #ececf0; }
+.nw-hero { position: relative; width: 100%; height: 196px; border-radius: 14px; overflow: hidden; background-size: cover; background-position: center; display: flex; align-items: flex-end; }
+.nw-hero span { margin: 10px; padding: 3px 10px; border-radius: 10px; background: rgba(0,0,0,.42); color: #fff; font-size: 12px; }
+.nw-src { display: flex; align-items: center; gap: 7px; margin: 12px 0 5px; font-size: 13px; color: #5f6368; }
+.nw-dot { width: 20px; height: 20px; border-radius: 50%; color: #fff; font-size: 10.5px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex: none; }
+.nw-src b { color: #202124; font-weight: 600; }
+.nw-big h3 { margin: 0; font-size: 19px; line-height: 1.38; font-weight: 700; letter-spacing: -.3px; }
+.nw-meta { margin-top: 7px; font-size: 13px; color: #5f6368; }
+
+/* 작은 기사 줄 */
+.nw-item { display: flex; gap: 14px; width: 100%; text-align: left; padding: 15px 16px; border-bottom: 1px solid #ececf0; align-items: flex-start; }
+.nw-item .tx { flex: 1; min-width: 0; }
+.nw-item h4 { margin: 6px 0 0; font-size: 16px; line-height: 1.4; font-weight: 600; letter-spacing: -.2px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.nw-item .th { width: 92px; height: 92px; border-radius: 12px; flex: none; background-size: cover; background-position: center; }
+.nw-item.read h4, .nw-big.read h3 { color: #70757a; font-weight: 500; }
+.nw-item:active, .nw-big:active { background: #f6f7f9; }
+.nw-end { text-align: center; color: #80868b; font-size: 13px; padding: 26px 0 40px; }
+.nw-empty { text-align: center; color: #80868b; padding: 80px 30px; line-height: 1.6; }
+
+/* 하단 탭 */
+.nw-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; padding: 8px 0 26px; box-sizing: border-box; display: flex; background: rgba(255,255,255,.97); border-top: 1px solid #ececf0; z-index: 5; }
+.nw-bar button { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11.5px; color: #5f6368; }
+.nw-bar button svg { width: 24px; height: 24px; }
+.nw-bar button.on { color: #1a73e8; font-weight: 600; }
+
+/* 검색 */
+.nw-search { margin: 4px 16px 12px; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 14px; border-radius: 22px; background: #f1f3f4; }
+.nw-search svg { width: 18px; height: 18px; stroke: #5f6368; flex: none; }
+.nw-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font-size: 16px; color: #202124; }
+
+/* ---------- 기사 상세 ---------- */
+.nw-detail { position: absolute; inset: 0; z-index: 10; background: #fff; display: none; flex-direction: column; transform: translateX(100%); transition: transform .3s cubic-bezier(.22,.8,.24,1); }
+.nw-detail.on { display: flex; }
+.nw-detail.show { transform: none; }
+.nw-dtop { flex: none; padding-top: 54px; display: flex; align-items: center; justify-content: space-between; padding-left: 6px; padding-right: 10px; height: 100px; box-sizing: border-box; border-bottom: 1px solid #ececf0; background: #fff; }
+.nw-dtop .l { display: flex; align-items: center; gap: 4px; min-width: 0; }
+.nw-app .nw-ib { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.nw-app .nw-ib:active { background: #f1f3f4; }
+.nw-app .nw-ib svg { width: 24px; height: 24px; }
+.nw-app .nw-ib.on svg { fill: #1a73e8; stroke: #1a73e8; }
+.nw-dtop .nm { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.nw-dscroll { flex: 1; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; scrollbar-width: none; padding-bottom: 60px; }
+.nw-dscroll::-webkit-scrollbar { display: none; }
+.nw-art { padding: 18px 18px 6px; }
+.nw-art h1 { margin: 0 0 12px; font-size: 23px; line-height: 1.4; font-weight: 800; letter-spacing: -.5px; }
+.nw-art .by { font-size: 13.5px; color: #5f6368; line-height: 1.6; }
+.nw-art .by b { color: #202124; }
+.nw-art .hero { margin: 16px -18px 0; height: 230px; border-radius: 0; }
+.nw-art .cap { margin-top: 6px; font-size: 12.5px; color: #80868b; }
+.nw-art p { margin: 18px 0 0; font-size: 16.5px; line-height: 1.78; color: #202124; white-space: pre-line; letter-spacing: -.2px; }
+.nw-note { margin: 22px 18px 0; padding: 13px 15px; border-radius: 12px; background: #fff7e0; color: #7a5b00; font-size: 13px; line-height: 1.5; }
+.nw-h { padding: 26px 18px 8px; font-size: 18px; font-weight: 700; }
+.nw-h small { font-weight: 500; color: #80868b; margin-left: 6px; font-size: 14px; }
+.nw-cm { padding: 12px 18px; border-top: 1px solid #f1f3f4; }
+.nw-cm .t { font-size: 13px; color: #5f6368; display: flex; gap: 6px; }
+.nw-cm .t b { color: #202124; }
+.nw-cm p { margin: 4px 0 8px; font-size: 15px; line-height: 1.5; }
+.nw-cm button { font-size: 13px; color: #5f6368; display: inline-flex; align-items: center; gap: 4px; height: 28px; padding: 0 10px; border-radius: 14px; background: #f1f3f4; }
+.nw-cm button.on { background: #e8f0fe; color: #1a73e8; font-weight: 600; }

@@ -1,0 +1,142 @@
+/* =========================================================
+   kakao.css  —  카카오톡 앱 디자인
+   ========================================================= */
+
+.kk-app { position: absolute; inset: 0; background: #fff; color: #191919; font-size: 14px; line-height: 1.35; overflow: hidden; }
+:where(.kk-app) button { border: 0; background: none; color: inherit; cursor: pointer; font: inherit; padding: 0; }
+:where(.kk-app) input { font: inherit; }
+.kk-ic { width: 22px; height: 22px; display: block; }
+.kk-av { flex: none; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; background-size: cover; background-position: center; }
+
+/* 홈 화면 아이콘 위 빨간 숫자 */
+.app-ico { position: relative; }
+.app-badge {
+  position: absolute; top: -5px; right: 4px; min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box;
+  border-radius: 11px; background: #ff3b30; color: #fff; font: 600 13px/22px -apple-system, sans-serif; font-style: normal;
+  display: none; align-items: center; justify-content: center; text-shadow: none;
+}
+
+/* ---------- 탭 ---------- */
+.kk-panels { position: absolute; left: 0; right: 0; top: 0; bottom: 84px; }
+.kk-panel { position: absolute; inset: 0; display: none; flex-direction: column; background: #fff; }
+.kk-panel.on { display: flex; }
+.kk-top { flex: none; padding-top: 54px; background: #fff; }
+.kk-top-in { height: 46px; display: flex; align-items: center; justify-content: space-between; padding: 0 16px; }
+.kk-top-in > b { font-size: 21px; font-weight: 800; }
+.kk-top-r { display: flex; gap: 18px; align-items: center; }
+.kk-scroll { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; scrollbar-width: none; }
+.kk-scroll::-webkit-scrollbar { display: none; }
+.kk-endpad { height: 24px; }
+.kk-empty { text-align: center; color: #999; padding: 60px 0; }
+
+.kk-nav { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; padding-bottom: 28px; background: #fff; border-top: 1px solid #eee; display: flex; z-index: 3; }
+.kk-nav button { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: #b5b5b5; font-size: 10.5px; position: relative; }
+.kk-nav button.on { color: #191919; }
+.kk-nav .kk-ic { width: 26px; height: 26px; }
+.kk-badge { position: absolute; top: 4px; left: 50%; margin-left: 6px; min-width: 20px; height: 20px; padding: 0 5px; box-sizing: border-box; border-radius: 10px; background: #ff3b30; color: #fff; font: 700 12px/20px sans-serif; font-style: normal; display: none; align-items: center; justify-content: center; }
+
+/* ---------- 친구 ---------- */
+.kk-me { display: flex; align-items: center; gap: 12px; padding: 10px 16px 12px; width: 100%; text-align: left; border-bottom: 1px solid #f1f1f1; }
+.kk-fr-t { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.kk-fr-t b { font-size: 16px; font-weight: 600; }
+.kk-fr-t small { color: #888; font-size: 13px; margin-top: 2px; }
+.kk-sec { padding: 12px 16px 4px; font-size: 12.5px; color: #8a8a8a; }
+.kk-sec em { font-style: normal; margin-left: 2px; }
+.kk-fr { display: flex; align-items: center; gap: 12px; padding: 7px 16px; width: 100%; text-align: left; }
+.kk-fr:active, .kk-ch:active, .kk-me:active { background: #f6f6f6; }
+.kk-fr .kk-fr-t b { font-size: 15.5px; font-weight: 500; }
+.kk-fr-s { max-width: 140px; border: 1px solid #e3e3e3; border-radius: 14px; padding: 4px 11px; font-size: 12px; color: #777; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- 채팅 목록 ---------- */
+.kk-ch { display: flex; align-items: center; gap: 12px; padding: 9px 16px; width: 100%; text-align: left; }
+.kk-ch-b { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.kk-ch-b b { font-size: 15.5px; font-weight: 600; }
+.kk-ch-p { color: #777; font-size: 13.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kk-ch-r { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex: none; }
+.kk-ch-r small { color: #a0a0a0; font-size: 11.5px; }
+.kk-cnt { min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 10px; background: #ff4d3d; color: #fff; font: 600 12px/20px sans-serif; font-style: normal; text-align: center; }
+
+/* ---------- 위에 쌓이는 화면 ---------- */
+.kk-ovs { position: absolute; inset: 0; pointer-events: none; z-index: 10; }
+.kk-ov { position: absolute; inset: 0; background: #fff; pointer-events: auto; display: flex; flex-direction: column; transform: translateX(100%); transition: transform .3s cubic-bezier(.22,.8,.24,1); }
+.kk-ov.in { transform: none; }
+
+/* ---------- 프로필 ---------- */
+.kk-ov.kk-profile { background: #3b3f4a; color: #fff; transform: translateY(100%); }
+.kk-ov.kk-profile.in { transform: none; }
+.kk-pf-bg { position: absolute; inset: 0; background: linear-gradient(170deg, #5c6475, #2a2d36); }
+.kk-pf-x { position: absolute; left: 14px; top: 60px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: #fff; z-index: 2; }
+.kk-pf-c { position: absolute; left: 0; right: 0; bottom: 190px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 0 30px; }
+.kk-pf-c b { font-size: 22px; margin-top: 8px; }
+.kk-pf-c p { margin: 0; color: rgba(255,255,255,.8); font-size: 14px; }
+.kk-pf-b { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 20px 46px; border-top: 1px solid rgba(255,255,255,.15); display: flex; justify-content: center; gap: 44px; }
+.kk-pf-b button { display: flex; flex-direction: column; align-items: center; gap: 6px; color: #fff; font-size: 12.5px; }
+.kk-pf-b .kk-ic { width: 26px; height: 26px; }
+
+/* ---------- 채팅방 ---------- */
+.kk-ov.kk-room { background: #abc1d1; }
+.kk-ch-h { flex: none; padding-top: 54px; height: 100px; box-sizing: border-box; display: flex; align-items: center; padding-left: 6px; padding-right: 14px; background: #abc1d1; }
+.kk-ch-h > b { flex: 1; font-size: 17px; font-weight: 700; }
+.kk-back { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; flex: none; }
+.kk-chatbody { padding: 6px 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.kk-day { text-align: center; padding: 10px 0 6px; }
+.kk-day span { display: inline-block; background: rgba(0,0,0,.18); color: #fff; font-size: 12px; padding: 5px 14px; border-radius: 14px; }
+.kk-unread { text-align: center; margin: 8px 0 2px; position: relative; }
+.kk-unread::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid rgba(255,255,255,.55); }
+.kk-unread span { position: relative; background: #abc1d1; padding: 0 10px; font-size: 12px; color: #fff; }
+.kk-row { display: flex; gap: 8px; align-items: flex-end; }
+.kk-row.me { justify-content: flex-end; }
+.kk-row.them { align-items: flex-start; }
+.kk-row-av { flex: none; width: 40px; }
+.kk-row-av.sp { height: 1px; }
+.kk-row-b { display: flex; flex-direction: column; gap: 3px; min-width: 0; max-width: 72%; }
+.kk-nm { font-size: 12.5px; color: #3a3a3a; }
+.kk-bw { display: flex; align-items: flex-end; gap: 5px; }
+.kk-bb { padding: 8px 11px; border-radius: 4px 14px 14px 14px; background: #fff; font-size: 14.5px; word-break: break-word; white-space: pre-wrap; max-width: 100%; }
+.kk-row.me .kk-bb { background: #fee500; border-radius: 14px 4px 14px 14px; max-width: 72%; }
+.kk-row.them:not(.first) .kk-bb { border-radius: 14px; }
+.kk-meta { flex: none; font-size: 10.5px; color: #4a5560; display: flex; flex-direction: column; align-items: flex-end; line-height: 1.2; }
+.kk-row.me .kk-meta i { font-style: normal; color: #ffeb33; font-weight: 700; font-size: 11px; color: #e0b800; }
+.kk-ph { width: 180px; height: 180px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; }
+.kk-in { flex: none; display: flex; align-items: center; gap: 8px; padding: 8px 10px 32px; background: #fff; }
+.kk-in input { flex: 1; min-width: 0; border: 0; outline: 0; background: #f2f2f2; border-radius: 18px; padding: 10px 14px; font-size: 15px; color: #191919; }
+.kk-send { width: 36px; height: 36px; border-radius: 50%; background: #f0f0f0; color: #bbb; display: flex; align-items: center; justify-content: center; }
+.kk-send.on { background: #fee500; color: #191919; }
+.kk-empty.light { color: rgba(255,255,255,.9); }
+
+/* 기본 프로필(사진 없음) */
+.kk-av.def { background: #d9dde5; align-items: flex-end; overflow: hidden; }
+.kk-av.def svg { display: block; margin-bottom: -6%; }
+
+/* ---------- 선택지 (지효 채팅방) ---------- */
+.kk-choice {
+  position: absolute; inset: 0; z-index: 6; display: none; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px; padding: 0 26px 70px; box-sizing: border-box;
+  background: rgba(10, 12, 18, .58); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px);
+}
+.kk-choice.on { display: flex; animation: kkFade .22s ease; }
+.kk-pill {
+  width: 100%; max-width: 330px; padding: 15px 14px; box-sizing: border-box; border-radius: 30px;
+  background: rgba(238, 238, 240, .93); color: #222; font-size: 15.5px; font-weight: 600; text-align: center;
+  border: 1px solid rgba(255, 255, 255, .8); box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+.kk-pill:active { background: #fff; transform: scale(.98); }
+@keyframes kkFade { from { opacity: 0; } to { opacity: 1; } }
+
+/* 상대가 입력 중일 때 점 세 개 */
+.kk-dots { display: flex; gap: 5px; align-items: center; padding: 12px 14px; }
+.kk-dots i { width: 7px; height: 7px; border-radius: 50%; background: #9aa0a6; animation: kkDot 1s infinite ease-in-out; }
+.kk-dots i:nth-child(2) { animation-delay: .15s; }
+.kk-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes kkDot { 0%, 80%, 100% { opacity: .3; transform: translateY(0); } 40% { opacity: 1; transform: translateY(-3px); } }
+
+/* ---------- 답장 인용 / 바뀐 프로필 사진 ---------- */
+.kk-rp { display: block; margin: 0 0 6px; padding: 0 0 6px; border-bottom: 1px solid rgba(0, 0, 0, .13); font-size: 12px; line-height: 1.35; }
+.kk-rp b { display: block; font-weight: 700; color: rgba(0, 0, 0, .62); }
+.kk-rp span { display: block; color: rgba(0, 0, 0, .5); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 190px; }
+.kk-av.alt { display: flex; align-items: center; justify-content: center; font-size: 22px; line-height: 1; }
+
+/* 마지막 안내 선택지 (저절로 떠요) */
+.kk-pill.end { background: rgba(110, 18, 30, .92); color: #fff; border-color: rgba(255, 130, 140, .55); font-size: 14.5px; line-height: 1.5; }
+.kk-pill.end:active { background: rgba(140, 24, 38, .95); }
+.kk-pill.end { word-break: keep-all; font-size: 14px; max-width: 340px; padding: 16px 18px; }

@@ -1,0 +1,132 @@
+/* =========================================================
+   photos.css  —  사진 앱 디자인
+   ========================================================= */
+
+.ph-app { position: absolute; inset: 0; background: #fff; color: #111; font-size: 15px; line-height: 1.35;
+  font-family: -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; overflow: hidden; }
+.ph-app button { border: 0; background: none; color: inherit; cursor: pointer; font-family: inherit; }
+
+/* ---------- 화면(탭) ---------- */
+.ph-panels { position: absolute; left: 0; right: 0; top: 0; bottom: 0; }
+.ph-panel { position: absolute; inset: 0; display: none; flex-direction: column; background: #fff; }
+.ph-panel.on { display: flex; }
+.ph-top { flex: none; padding-top: 54px; }
+.ph-scroll { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain; scrollbar-width: none; padding-bottom: 130px; }
+.ph-scroll::-webkit-scrollbar { display: none; }
+
+.ph-hd { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px 8px; min-height: 44px; }
+.ph-hd h1 { margin: 0; font-size: 32px; font-weight: 800; letter-spacing: -.5px; }
+.ph-hd .ph-center { font-size: 17px; font-weight: 700; }
+.ph-app .ph-pill { height: 38px; padding: 0 16px; border-radius: 19px; background: #efeff2; font-size: 16px; font-weight: 600; color: #8a8a90; }
+.ph-app .ph-pill.blue { color: #0a84ff; }
+.ph-app .ph-pill:active { background: #e2e2e6; }
+.ph-app .ph-back { display: flex; align-items: center; gap: 2px; font-size: 17px; color: #0a84ff; padding: 6px 0; }
+.ph-app .ph-back svg { width: 22px; height: 22px; }
+.ph-spacer { width: 60px; }
+
+/* 연도/월/일/모든 사진 */
+.ph-seg { display: flex; margin: 6px 16px 10px; padding: 3px; border-radius: 14px; background: #efeff2; }
+.ph-seg button { flex: 1; height: 38px; border-radius: 11px; font-size: 16px; color: #8a8a90; }
+.ph-seg button.on { background: #fff; color: #111; font-weight: 600; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+
+/* ---------- 사진 격자 ---------- */
+.ph-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.ph-grid.big { grid-template-columns: repeat(2, 1fr); gap: 3px; padding: 0 3px; }
+.ph-cell { position: relative; aspect-ratio: 1; overflow: hidden; background: #ddd; cursor: pointer; }
+.ph-cell .ph-img { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.ph-cell .ph-lb { position: absolute; left: 6px; bottom: 6px; z-index: 1; color: #fff; font-size: 11px; font-weight: 600;
+  padding: 2px 7px; border-radius: 9px; background: rgba(0,0,0,.35); max-width: 90%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ph-cell .ph-days { position: absolute; left: 6px; bottom: 6px; z-index: 1; color: #fff; font-size: 14px; font-weight: 700;
+  padding: 4px 9px; border-radius: 12px; background: rgba(60,60,67,.65); }
+.ph-cell .ph-heart { position: absolute; right: 5px; bottom: 5px; z-index: 1; width: 16px; height: 16px; fill: #fff; filter: drop-shadow(0 0 2px rgba(0,0,0,.5)); }
+.ph-cell .ph-chk { position: absolute; right: 6px; top: 6px; z-index: 2; width: 24px; height: 24px; border-radius: 50%;
+  border: 2px solid #fff; background: rgba(0,0,0,.2); display: none; box-shadow: 0 0 3px rgba(0,0,0,.4); }
+.ph-selecting .ph-cell .ph-chk { display: block; }
+.ph-cell.sel .ph-chk { background: #0a84ff; border-color: #fff; }
+.ph-cell.sel .ph-chk::after { content: ""; position: absolute; left: 7px; top: 3px; width: 5px; height: 10px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+.ph-cell.sel .ph-img { opacity: .75; }
+
+.ph-sec { padding: 16px 16px 8px; font-size: 20px; font-weight: 700; }
+.ph-sec small { font-size: 14px; color: #8a8a90; font-weight: 500; margin-left: 6px; }
+.ph-count { text-align: center; color: #8a8a90; font-size: 19px; padding: 22px 0 10px; }
+.ph-empty { text-align: center; color: #8a8a90; padding: 90px 30px; font-size: 15px; line-height: 1.6; }
+
+/* ---------- 컬렉션 ---------- */
+.ph-albums { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 14px; padding: 6px 16px 10px; }
+.ph-app .ph-album { text-align: left; }
+.ph-app .ph-album .ph-cover { position: relative; aspect-ratio: 1; border-radius: 12px; overflow: hidden; background: #e6e6ea; }
+.ph-app .ph-album .ph-cover .ph-img { position: absolute; inset: 0; background-size: cover; background-position: center; }
+.ph-app .ph-album b { display: block; margin-top: 7px; font-size: 16px; font-weight: 600; }
+.ph-app .ph-album span { font-size: 14px; color: #8a8a90; }
+.ph-list { margin: 8px 16px 0; border-radius: 14px; background: #f4f4f7; overflow: hidden; }
+.ph-list button { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 15px 16px; font-size: 16px; border-top: .5px solid #e1e1e6; }
+.ph-list button:first-child { border-top: 0; }
+.ph-list button:active { background: #e8e8ec; }
+.ph-list span { color: #8a8a90; font-size: 15px; }
+
+/* ---------- 검색 ---------- */
+.ph-search { margin: 6px 16px 10px; display: flex; align-items: center; gap: 8px; height: 42px; padding: 0 12px; border-radius: 12px; background: #efeff2; }
+.ph-search svg { width: 18px; height: 18px; flex: none; stroke: #8a8a90; }
+.ph-search input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font-size: 16px; color: #111; }
+
+/* ---------- 최근 삭제된 항목 ---------- */
+.ph-note { padding: 4px 24px 14px; text-align: center; color: #8a8a90; font-size: 14.5px; line-height: 1.5; }
+.ph-foot { position: absolute; left: 0; right: 0; bottom: 0; height: 100px; padding: 18px 24px 0; display: flex; justify-content: space-between;
+  background: #fafafc; border-top: .5px solid #e1e1e6; font-size: 20px; z-index: 6; box-sizing: border-box; }
+.ph-foot .del { color: #ff453a; }
+.ph-foot .res { color: #0a84ff; }
+.ph-foot button:disabled { opacity: .35; }
+.ph-sub .ph-scroll { padding-bottom: 140px; }
+
+/* ---------- 하단 탭 ---------- */
+.ph-bar { position: absolute; left: 14px; right: 14px; bottom: 30px; height: 70px; z-index: 5; display: flex; align-items: center; padding: 0 8px;
+  border-radius: 35px; background: rgba(250,250,252,.94); box-shadow: 0 2px 16px rgba(0,0,0,.16); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.ph-bar button { flex: 1; height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
+  font-size: 12.5px; color: #111; border-radius: 28px; }
+.ph-bar button svg { width: 26px; height: 26px; }
+.ph-bar button.on { color: #0a84ff; background: #e6e6ea; }
+
+/* ---------- 서브 화면(앨범 안 / 최근 삭제) ---------- */
+.ph-sub { position: absolute; inset: 0; z-index: 7; background: #fff; display: none; flex-direction: column; }
+.ph-sub.on { display: flex; }
+
+/* ---------- 전체 화면 보기 ---------- */
+.ph-viewer { position: absolute; inset: 0; z-index: 20; background: #fff; display: none; overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.ph-viewer.on { display: block; }
+.ph-viewer.dark { background: #000; }
+.ph-vtrack { position: absolute; inset: 0; display: flex; will-change: transform; }
+.ph-vtrack.anim { transition: transform .3s cubic-bezier(.22,.8,.24,1); }
+.ph-vslide { flex: none; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ph-vpic { width: 100%; aspect-ratio: 3 / 4; max-height: 74%; background-size: contain; background-repeat: no-repeat; background-position: center; display: flex; align-items: flex-end; justify-content: flex-start; color: #fff; }
+.ph-vpic.ph-ph span { margin: 14px; padding: 4px 12px; border-radius: 12px; background: rgba(0,0,0,.35); font-size: 14px; font-weight: 600; }
+.ph-vtop, .ph-vbot { position: absolute; left: 0; right: 0; z-index: 3; background: rgba(250,250,252,.96); transition: opacity .2s; }
+.ph-vtop { top: 0; padding: 54px 10px 8px; display: flex; align-items: center; justify-content: space-between; }
+.ph-vtop .tt { text-align: center; line-height: 1.25; }
+.ph-vtop .tt b { display: block; font-size: 16px; }
+.ph-vtop .tt small { font-size: 12.5px; color: #8a8a90; }
+.ph-vbot { bottom: 0; height: 104px; padding: 12px 34px 0; display: flex; justify-content: space-between; align-items: flex-start; box-sizing: border-box; }
+.ph-vbot button { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+.ph-vbot svg, .ph-vtop svg { width: 26px; height: 26px; }
+.ph-vbot .heart.on svg { fill: #ff375f; stroke: #ff375f; }
+.ph-viewer.dark .ph-vtop, .ph-viewer.dark .ph-vbot { background: #000; color: #fff; }
+.ph-viewer.dark .ph-back { color: #fff; }
+.ph-viewer.hidebars .ph-vtop, .ph-viewer.hidebars .ph-vbot { opacity: 0; pointer-events: none; }
+.ph-vcount { position: absolute; left: 0; right: 0; bottom: 112px; z-index: 3; text-align: center; font-size: 12.5px; color: #8a8a90; pointer-events: none; transition: opacity .2s; }
+.ph-viewer.hidebars .ph-vcount { opacity: 0; }
+.ph-viewer.dark .ph-vcount { color: #aaa; }
+.ph-app .ph-varrow { position: absolute; top: 50%; z-index: 3; width: 40px; height: 56px; margin-top: -28px; display: flex; align-items: center; justify-content: center;
+  color: #fff; background: rgba(0,0,0,.25); opacity: .0; transition: opacity .2s; }
+.ph-viewer:hover .ph-varrow { opacity: .8; }
+.ph-app .ph-varrow.l { left: 0; border-radius: 0 12px 12px 0; }
+.ph-app .ph-varrow.r { right: 0; border-radius: 12px 0 0 12px; }
+.ph-app .ph-varrow svg { width: 22px; height: 22px; }
+@media (hover: none) { .ph-varrow { display: none; } }
+
+/* ---------- 확인창 (삭제할까요?) ---------- */
+.ph-sheet { position: absolute; inset: 0; z-index: 30; display: none; align-items: flex-end; background: rgba(0,0,0,.35); padding: 0 12px 36px; box-sizing: border-box; }
+.ph-sheet.on { display: flex; }
+.ph-sheet .box { width: 100%; border-radius: 18px; background: rgba(248,248,250,.98); overflow: hidden; text-align: center; }
+.ph-sheet p { margin: 0; padding: 16px 20px; font-size: 13.5px; color: #6c6c72; line-height: 1.45; border-bottom: .5px solid #dcdce0; }
+.ph-sheet button { display: block; width: 100%; height: 56px; font-size: 19px; color: #0a84ff; border-top: .5px solid #dcdce0; }
+.ph-sheet button.ok { color: #ff453a; border-top: 0; }
