@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
   <meta name="theme-color" content="#0b0b0e">
   <title>가상 아이폰</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="가상폰">
   <link rel="stylesheet" href="css/phone.css">
   <link rel="stylesheet" href="css/lockscreen.css">
   <link rel="stylesheet" href="css/home.css">
@@ -159,5 +165,6 @@
   <script src="js/apps/news.js"></script>
   <script src="js/apps/links.js"></script>
   <script src="js/core/lockscreen.js"></script>
+  <script>if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){});});}</script>
 </body>
 </html>
