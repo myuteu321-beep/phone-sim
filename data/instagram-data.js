@@ -267,8 +267,8 @@ window.IG_DATA = {
       caption: "지금 난리난 열애설 한 번에 정리 🧵 @doyun_seo  #남자아이돌 #화제",
       music: "원본 오디오", likes: 21400, commentCount: 3420,
       comments: [
-        { u: "bomi", text: "@doyun_seo 이 ㅅㄲ 아님?", time: "1시간", likes: 18 },
-        { u: "pol", text: "@doyun_seo 님게이임? ㅋㅋㅋ", time: "1시간", likes: 20 },
+        { u: "bomi", text: "@leo_jungtw 이 ㅅㄲ 아님?", time: "1시간", likes: 18 },
+        { u: "pol", text: "@leo_jungtw 님게이임? ㅋㅋㅋ", time: "1시간", likes: 20 },
         { u: "jun", text: "남의 연애를 왜 이렇게 파헤쳐 꺼져좀;", time: "52분", likes: 1320 },
         { u: "ara", text: "확인된 거 하나도 없는데 릴스부터 올리네", time: "40분", likes: 610 },
         { u: "yeon", text: "편집 잘하긴 했네 ㅋㅋㅋㅋ", time: "30분", likes: 33 }
