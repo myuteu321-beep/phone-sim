@@ -202,7 +202,7 @@ window.X_DATA = {
     {
       id: "r14", u: "nyang", time: "21분", feed: ["rec"],
       text: "인형 무산 안합니다.\n환불 원하시는분들은 따로 디엠으로 연락 부탁드려요.\n\nI will not be canceling the doll project. If you would like a refund, please contact me separately via DM.",
-      quote: { name: "낭운이", handle: "@nyangyun_doll", text: "❥･• 10cm 냥운 인형 수요조사\n\n수요조사 기간 : 26.08.14 ~ 26.09.14 23:59\n타래에 인형 바디 및 촉감 참고🫶\n\n🔗tmm.im/d/0000" },
+      quote: { name: "운냥이", handle: "@nyangyun_doll", text: "❥･• 10cm 운냥 인형 수요조사\n\n수요조사 기간 : 26.08.14 ~ 26.09.14 23:59\n타래에 인형 바디 및 촉감 참고🫶\n\n🔗tmm.im/d/0000" },
       likes: 1240, rts: 402, rep: 133, views: 31000
     },
     {
@@ -354,14 +354,14 @@ window.X_DATA = {
 
   /* 기본 답글 / 인용 (답글이 따로 없는 게시물에 보여요) */
   defaultReplies: [
-    { u: "ara",  time: "5분",  text: "ㅠㅠㅠ 진짜 공감", likes: 24 },
-    { u: "nuri", time: "9분",  text: "나도 지금 이 상태임 ㅋㅋㅋ", likes: 17 },
-    { u: "sora", time: "12분", text: "일단 다들 진정하고 공식 입장 기다리자", likes: 31 },
-    { u: "bomi", time: "20분", text: "이 글 보고 조금 위로 됨", likes: 9 }
+    { u: "ara",  time: "5분",  text: "", likes: 24 },
+    { u: "nuri", time: "9분",  text: "", likes: 17 },
+    { u: "sora", time: "12분", text: "", likes: 31 },
+    { u: "bomi", time: "20분", text: "", likes: 9 }
   ],
   defaultQuotes: [
-    { u: "mina", text: "이 말 완전 공감해요" },
-    { u: "yeon", text: "결국 기다리는 수밖에…" }
+    { u: "mina", text: "" },
+    { u: "yeon", text: "" }
   ],
 
   /* 내가 단 답글 (프로필 > 답글 탭) */
@@ -399,24 +399,24 @@ window.X_DATA = {
       { from: "them", time: "오전 7:03", text: "언제까지 무대응하실 건데요" }
     ]},
     { u: "d1", unread: true, time: "7:00", msgs: [
-      { from: "them", day: "오늘", time: "오전 6:58", text: "짜굔이랑 사귀는게 아니였다고?" },
-      { from: "them", time: "오전 6:59", text: "말도안돼" },
-      { from: "them", time: "오전 7:00", text: "고영이짓잔뜩하더니 날 속였어.." }
+      { from: "them", day: "오늘", time: "오전 6:58", text: "실망스럽습니다" },
+      { from: "them", time: "오전 6:59", text: "잔혹하시네요" },
+      { from: "them", time: "오전 7:00", text: "좋아할 이유가 사라졌네요." }
     ]},
     { u: "pol", unread: true, time: "6:52", msgs: [
       { from: "them", day: "오늘", time: "오전 6:51", text: "저는 당신의 열혈팬입니다." },
       { from: "them", time: "오전 6:52", text: "당신이 매우 실망스럽습니다. 레오는 남자를 좋아하다" }
     ]},
     { u: "jun", unread: true, time: "6:40", msgs: [
-      { from: "them", day: "오늘", time: "오전 6:40", text: "내 티켓 어쩔거임ㅆㅂ" }
+      { from: "them", day: "오늘", time: "오전 6:40", text: "내 티켓 어쩔거임 하...ㅠㅠ" }
     ]},
     { u: "mina", unread: true, time: "6:28", msgs: [
       { from: "them", day: "오늘", time: "오전 6:27", text: "그래도 오래 좋아했는데 이건 아니잖아.." },
       { from: "them", time: "오전 6:28", text: "조용히 만나기라도 하지 왜 이렇게까지 됐어..." }
     ]},
     { u: "d3", unread: true, time: "6:10", msgs: [
-      { from: "them", day: "오늘", time: "오전 6:09", text: "왠지 모르게 감사하다.." },
-      { from: "them", time: "오전 6:10", text: "혁이랑 오래오래 행복하세요" }
+      { from: "them", day: "오늘", time: "오전 6:09", text: "응원할게요" },
+      { from: "them", time: "오전 6:10", text: "오래오래 행복하세요" }
     ]},
     { u: "file", unread: true, time: "5:58", msgs: [
       { from: "them", day: "오늘", time: "오전 5:58", text: "그럴줄 알았다" }
@@ -425,8 +425,8 @@ window.X_DATA = {
       { from: "them", day: "오늘", time: "오전 5:40", text: "탈덕 절대 안해요 마음 잘 추스리고 콘서트에서 봐요ㅠㅠㅠㅠㅜㅜ" }
     ]},
     { u: "d4", unread: true, time: "5:20", msgs: [
-      { from: "them", day: "오늘", time: "오전 5:19", text: "저였어도 ㅅㅎ님이라는분이랑 결혼 생각 했을 것 같아요" },
-      { from: "them", time: "오전 5:20", text: "잘 어울리세요.." }
+      { from: "them", day: "오늘", time: "오전 5:19", text: "일반인 신상은 안 지키시나요?" },
+      { from: "them", time: "오전 5:20", text: "조심 좀 하세요." }
     ]},
     { u: "q17", unread: true, time: "5:05", msgs: [
       { from: "them", day: "오늘", time: "오전 5:03", text: "택운님 혹시 단독 기사 보셨어요……? " },
@@ -434,8 +434,8 @@ window.X_DATA = {
       { from: "them", time: "오전 5:05", text: "괜찮으세요……?" }
     ]},
     { u: "d2", unread: true, time: "4:50", msgs: [
-      { from: "them", day: "오늘", time: "오전 4:49", text: "되게 잘 어울리세요" },
-      { from: "them", time: "오전 4:50", text: "왜이렇게 기분이 날아갈 것 같지" }
+      { from: "them", day: "오늘", time: "오전 4:49", text: "기사 진짜에요?" },
+      { from: "them", time: "오전 4:50", text: "아....ㅠㅠㅠ" }
     ]},
     { u: "q18", unread: true, time: "4:35", msgs: [
       { from: "them", day: "오늘", time: "오전 4:34", text: "그동안 팬들한테 바쁘다 피곤하다 할 때 뒤에서는 그러고 계셨던 거예요? " },
@@ -454,9 +454,9 @@ window.X_DATA = {
       { from: "them", time: "오전 3:50", text: "너무 죄책감 갖지 말고 밥 잘 챙겨 먹어… 별빛들은 항상 네 편이야." }
     ]},
     { u: "d5", unread: true, time: "3:30", msgs: [
-      { from: "them", day: "오늘", time: "오전 3:28", text: "이 여우같은것." },
-      { from: "them", time: "오전 3:29", text: "내가 짝사랑하던 오빠를 뺏어가?........" },
-      { from: "them", time: "오전 3:30", text: "구미호 같은것" }
+      { from: "them", day: "오늘", time: "오전 3:28", text: "무섭네요" },
+      { from: "them", time: "오전 3:29", text: "팬들이 전부 한순간에 변하다니.." },
+      { from: "them", time: "오전 3:30", text: "너무 신경쓰지마세요" }
     ]},
     { u: "q22", unread: true, time: "3:15", msgs: [
       { from: "them", day: "오늘", time: "오전 3:14", text: "너가 잘못한거 하나도 없으니까 고개 숙이지 마" },
