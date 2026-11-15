@@ -325,7 +325,7 @@ window.KAKAO_DATA = {
         { k: "me", text: "실스야", time: "오후 3:23" },
         { k: "me", text: "놀자", time: "오후 3:24" },
         { k: "them", text: "아우", time: "오후 3:25" },
-        { k: "them", text: "민석이형은요", time: "오후 3:26" },
+        { k: "them", text: "재환이형은요", time: "오후 3:26" },
         { k: "me", text: "남자친구 앞에서 외간남자 이름을 거내", time: "오후 3:30" },
         { k: "me", text: "꺼내", time: "오후 3:31" },
         { k: "them", text: "뭘 거내요", time: "오후 3:32", rp: { to: "나", text: "꺼내" } },
